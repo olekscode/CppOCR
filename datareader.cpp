@@ -3,10 +3,10 @@
 DataReader::~DataReader()
 {
     for (int i = 0; i < _data_size; ++i) {
-        delete _images[i];
+        delete[] _images[i];
     }
-    delete _images;
-    delete _labels;
+    delete[] _images;
+    delete[] _labels;
 }
 
 unsigned char* DataReader::image(int index) const
